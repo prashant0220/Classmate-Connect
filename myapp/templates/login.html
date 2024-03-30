@@ -1,0 +1,63 @@
+{%  extends "base.html" %}
+
+{% load static %}
+{% block title %}
+    login
+{% endblock %}
+{% block extra_css %} <link rel="stylesheet" href="{% static 'myapp/css/login.css'%}">
+{% endblock %}
+
+{% block body %}
+
+    <form action="{% url 'login'%}" method="post">
+        {% csrf_token %}
+      <div class="middle-heading">
+        <h1>LOGIN</h1>
+    </div>
+        <br>
+        {% if messages %}
+            {% for message in messages %}
+                <center>
+
+                    <h3 style="color:red">
+                        {{message}}
+                    </h3>
+                  </center>
+                <br>
+            {% endfor %}
+    {% endif %}
+
+
+
+    <input type="text" id="rollno" name="rollno" placeholder="Enter your Roll number" required>
+
+
+<!--    <label for="password">Password:</label>-->
+    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+<!--    <label for="confirm_password">Confirm Password:</label>-->
+<!--    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>-->
+
+        <input type="submit" value="Login">
+
+         <center>
+                    <h4 style="color:white">
+                         New User <a href="{% url 'signup'%}"> Register Now </a>
+
+                    </h4>
+                  </center>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock body %}

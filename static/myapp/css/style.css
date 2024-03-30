@@ -1,0 +1,40 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFCF4;
+  color: #1920b0;
+  padding: 5px;
+  }
+nav {
+            flex: 1; /* Takes up remaining space */
+            text-align: right;
+            margin-right:10px;
+        }
+nav a {
+            margin-left: 20px;
+            margin-right: 20px;
+            color: red;
+            text-decoration: none;
+        }
+
+/* Body styles */
+body {
+  background-image: url('../images/itm.png');/* Replace 'college-image.jpg' with your image file path */
+  background-size: cover;
+  background-position: center;
+  height: 125vh; /* Adjust height as needed */
+  position: relative;
+
+}
+
+
+

@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: student
+    buildCommand: "./build.sh"
+    env: python
+    startCommand: "gunicorn student.wsgi:application"

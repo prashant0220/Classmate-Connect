@@ -1,0 +1,50 @@
+{%  extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+    ITM Aligarh
+{% endblock %}
+{% block extra_css %} <link rel="stylesheet" href="{% static 'myapp/css/home.css'%}">
+{% endblock %}
+
+
+{% block body %}
+
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Profile Photo</th>
+            <th>Name</th>
+            <th>Roll No.</th>
+            <th>Email ID</th>
+
+        </tr>
+    </thead>
+    <tbody>
+    {% for student in students %}
+        <tr>
+            <td>
+                <div class="profile-image">
+                {% if student.profile_photo %}
+                <img src="{{ student.profile_photo.url }}" alt="Profile Image">
+            {% else %}
+                <img src="{% static 'myapp/images/user.svg' %}" alt="Default Profile Image">
+            {% endif %}
+                </div>
+            </td>
+            <td>{{student.name}}</td>
+            <td>{{student.roll_number}}</td>
+            <td>{{student.email}}</td>
+
+        </tr>
+    {% endfor %}
+        <!-- Add more rows for additional students if needed -->
+    </tbody>
+</table>
+
+
+
+{% endblock body %}
